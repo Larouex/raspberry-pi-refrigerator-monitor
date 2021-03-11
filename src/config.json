@@ -1,0 +1,581 @@
+{
+  "ServerDiscoveryName": "Smart Monitor for Cold Hub",
+  "Description": "Monitoring of Cold Hub",
+  "ApplicationUri": "urn:LarouexSmartKitchen:Server",
+  "TelemetryFrequencyInSeconds": 10,
+  "ReadTimeBetweenTemperatureInSeconds": 5,
+  "TemperatureFormat": "F",
+  "NameSpace": "RefriderationMonitor1",
+  "NREUrl": "http://developer.nrel.gov/api/solar/nsrdb_0512_download.json?api_key={api_key}",
+  "ClassLoggingMaps":[
+    {
+      "Name": "DeviceClient",
+      "LoggingId": "DEVICE CLIENT"
+    },
+    {
+      "Name": "ProvisionDevice",
+      "LoggingId": "PROVISION DEVICE"
+    }
+  ],
+  "Status": {
+    "Pins": {
+      "Red": 5,
+      "Green": 6,
+      "Blue": 16
+    }
+  },
+  "SerialPortEmulator":{
+    "Port": "ttyS0",
+    "BaudRate": 9600
+  },
+  "USBSerialEmulator":{
+    "Port": "ttyUSB0",
+    "BaudRate": 9600
+  },
+  "SerialEmulator":{
+    "Name": "ColdPackSerial",
+    "NameSpace": "RefriderationMonitorStorage",
+    "Variables": [
+      {
+        "Name": "solarIrradiation",
+        "InterfacelId": "dtmi:RefriderationMonitorStorage:solarIrradiation;1",
+        "InterfaceInstanceName": "solarIrradiation",
+        "TwinProperties":[
+          {
+            "DisplayName": "Solar Irradiation Source",
+            "Name": "source",
+            "IoTCDataType": "string",
+            "DefaultValue": null,
+            "UseRangeValues": "SelectIndex:0",
+            "RangeValues": [
+              "Cold Hub Instance {deviceName}"
+            ]
+          },
+          {
+            "DisplayName": "City",
+            "Name": "city",
+            "IoTCDataType": "string",
+            "DefaultValue": null,
+            "UseRangeValues": "SelectIndex:0",
+            "RangeValues": [
+              "Aba",
+              "Abakaliki",
+              "Abeokuta",
+              "Abonnema",
+              "Abuja",
+              "Ado Ekiti",
+              "Afikpo",
+              "Akpawfu",
+              "Akure",
+              "Asaba",
+              "Awgu",
+              "Awka",
+              "Bauchi",
+              "Batagarawa",
+              "Benin City",
+              "Bida",
+              "Birnin Kebbi",
+              "Buguma",
+              "Calabar",
+              "Dutse",
+              "Ede",
+              "Eket",
+              "Enugu",
+              "Gombe",
+              "Gusau",
+              "Ibadan",
+              "Ife",
+              "Ikeja",
+              "Ikirun",
+              "Ikot-Abasi",
+              "Ikot Ekpene",
+              "Ilorin",
+              "Iwo",
+              "Jalingo",
+              "Jebba",
+              "Jimeta",
+              "Jos",
+              "Kabba",
+              "Kaduna",
+              "Kano",
+              "Katsina",
+              "Karu",
+              "Kontagora",
+              "Kutigi",
+              "Kumariya",
+              "Lafia",
+              "Lagos",
+              "Lekki",
+              "Lokoja",
+              "Maiduguri",
+              "Makurdi",
+              "Minna",
+              "Nnewi",
+              "Nsukka",
+              "Offa",
+              "Ogbomoso",
+              "Onitsha",
+              "Okene",
+              "Ogaminana",
+              "Omu-Aran",
+              "Ondo City",
+              "Oron",
+              "Oshogbo",
+              "Owerri",
+              "Owo",
+              "Orlu",
+              "Oyo",
+              "Port Harcourt",
+              "Potiskum",
+              "Sokoto",
+              "Suleja",
+              "Umuahia",
+              "Uyo",
+              "Warri",
+              "Wukari",
+              "Yenagoa",
+              "Yola",
+              "Zaria"
+            ]
+          },
+          {
+            "DisplayName": "State",
+            "Name": "state",
+            "IoTCDataType": "string",
+            "DefaultValue": null,
+            "UseRangeValues": "SelectIndex:0",
+            "RangeValues": [
+              "Abia",
+              "Adamawa",
+              "Akwa Ibom",
+              "Anambra",
+              "Bauchi",
+              "Bayelsa",
+              "Benue",
+              "Borno",
+              "Cross River",
+              "Delta",
+              "Ebonyi",
+              "Edo",
+              "Ekiti",
+              "Enugu",
+              "Gombe",
+              "Imo",
+              "Jigawa",
+              "Kaduna",
+              "Kano",
+              "Katsina",
+              "Kebbi",
+              "Kogi",
+              "Kwara",
+              "Lagos",
+              "Nasarawa",
+              "Niger",
+              "Ogun",
+              "Ondo",
+              "Osun",
+              "Oyo",
+              "Plateau",
+              "Rivers",
+              "Sokoto",
+              "Taraba",
+              "Yobe",
+              "Zamfara"
+            ]
+          },
+          {
+            "DisplayName": "Country",
+            "Name": "country",
+            "IoTCDataType": "string",
+            "DefaultValue": "Nigeria",
+            "UseRangeValues": "SelectIndex:0",
+            "RangeValues": [
+              "Nigeria"
+            ]
+          },
+          {
+            "DisplayName": "Time Zone",
+            "Name": "time_zone",
+            "IoTCDataType": "string",
+            "DefaultValue": "WAT",
+            "UseRangeValues": "SelectIndex:0",
+            "RangeValues": [
+              "WAT"
+            ]
+          },
+          {
+            "DisplayName": "Elevation",
+            "Name": "elevation",
+            "IoTCDataType": "integer",
+            "DefaultValue": null,
+            "UseRangeValues": "SelectIndex:1",
+            "RangeValues": [
+              450,
+              840,
+              1053,
+              1593,
+              1800,
+              2042,
+              2280,
+              2359,
+              2419
+            ]
+          },
+          {
+            "DisplayName": "Solar Irradiation Geo Location",
+            "Name": "geo_location",
+            "IoTCDataType": "location",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              "9.081999:8.675277"
+            ]
+          }
+        ],
+        "Telemetries":[
+          {
+            "DisplayName": "Clear Sky DHI",
+            "Name": "clearsky_DHI",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Clear Sky DNI",
+            "Name": "clearsky_DNI",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Clear Sky GHI",
+            "Name": "clearsky_GHI",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Dew Point",
+            "Name": "dew_point",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              12.2,
+              12.3
+            ]
+          },
+          {
+            "DisplayName": "DHI",
+            "Name": "DHI",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "DNI",
+            "Name": "DNI",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "GHI",
+            "Name": "GHI",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Snow Depth",
+            "Name": "snow_depth",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Solar Zenith Angle",
+            "Name": "solar_zenith_angle",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Temperature",
+            "Name": "temperature",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Pressure",
+            "Name": "presure",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Relative Humidity",
+            "Name": "relative_humidity",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Precipitable Water",
+            "Name": "precipitable_water",
+            "IoTCDataType": "integer",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1,
+              2
+            ]
+          },
+          {
+            "DisplayName": "Wind Direction",
+            "Name": "wind_direction",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              2.01
+            ]
+          },
+          {
+            "DisplayName": "Wind Speed",
+            "Name": "wind_speed",
+            "IoTCDataType": "integer",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "batteryBank",
+        "InterfacelId": "dtmi:RefriderationMonitorStorage:batteryBank;1",
+        "InterfaceInstanceName": "batteryBank",
+        "TwinProperties":[
+        ],
+        "Telemetries":[
+          {
+            "DisplayName": "Total Runtime",
+            "Name": "total_runtime",
+            "IoTCDataType": "integer",
+            "UseRangeValues": "Counter",
+            "RangeValues": [
+            ]
+          },
+          {
+            "DisplayName": "Remaining Runtime",
+            "Name": "coldpack_humidity",
+            "IoTCDataType": "integer",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              6,
+              6.1,
+              6.2,
+              6.3,
+              6.4
+            ]
+          },
+          {
+            "DisplayName": "Temperature",
+            "Name": "temperature",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "State of Charge",
+            "Name": "SOC",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Charged",
+            "Name": "charged",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Discharged",
+            "Name": "discharged",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Voltage",
+            "Name": "voltage",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Low Voltage",
+            "Name": "low_voltage",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "High Voltage",
+            "Name": "high_voltage",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Current",
+            "Name": "current",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          },
+          {
+            "DisplayName": "Performance",
+            "Name": "performance",
+            "IoTCDataType": "double",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              1.01,
+              1.02
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "ambient",
+        "InterfacelId": "dtmi:RefriderationMonitorStorage:ambient;1",
+        "InterfaceInstanceName": "ambient",
+        "TwinProperties":[
+        ],
+        "Telemetries":[
+          {
+            "DisplayName": "Ambient Temperature",
+            "Name": "temperature",
+            "IoTCDataType": "float",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              30.45,
+              33.23,
+              35.90,
+              31.54,
+              33.28
+            ]
+          },
+          {
+            "DisplayName": "Ambient Humidity",
+            "Name": "humidity",
+            "IoTCDataType": "float",
+            "UseRangeValues": "RangeValues",
+            "RangeValues": [
+              64.1,
+              63.0,
+              72.3,
+              73.4,
+              74.5
+            ]
+          }          
+        ]
+      }
+    ]
+  },
+  "Device":{
+    "DeviceNamePrefix": "cold-hub-{id}",
+    "NameSpace": "RefriderationMonitorStorage",
+    "DefaultComponentId": "dtmi:RefriderationMonitorStorage:mainComponent;1"
+  },
+  "Model": {
+    "NameSpace": "RefriderationMonitorStorage",
+    "DefaultComponentId": "dtmi:RefriderationMonitorStorage:mainComponent;1",
+    "Components": [
+      {
+        "Name": "solarIrradiation",
+        "InterfacelId": "dtmi:RefriderationMonitorStorage:solarIrradiation;1"
+      },
+      {
+        "Name": "batteryBank",
+        "InterfacelId": "dtmi:RefriderationMonitorStorage:batteryBank;1"
+      },
+      {
+        "Name": "ambient",
+        "InterfacelId": "dtmi:RefriderationMonitorStorage:ambient;1",
+        "SensorsAttached": [
+          {
+            "Id": "dtmi:RefriderationMonitorStorage:ambient:temperature;1",
+            "DisplayName": "Temperature",
+            "Name": "temperature",
+            "Type": "double"
+          },
+          {
+            "Id": "dtmi:RefriderationMonitorStorage:ambient:humidity;1",
+            "DisplayName": "Humidity",
+            "Name": "humidity",
+            "Type": "double"
+          }
+        ]
+      }
+    ]
+  }
+}

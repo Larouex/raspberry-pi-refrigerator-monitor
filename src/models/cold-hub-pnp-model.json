@@ -1,0 +1,623 @@
+[
+  {
+    "@id": "dtmi:RefriderationMonitorStorage:mainComponent;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "SolarIrradiation"
+        },
+        "name": "solarIrradiation",
+        "schema": "dtmi:RefriderationMonitorStorage:solarIrradiation;1"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:batteryBank;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "BatteryBank"
+        },
+        "name": "batteryBank",
+        "schema": "dtmi:RefriderationMonitorStorage:batteryBank;1"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:ambient;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "Ambient"
+        },
+        "name": "ambient",
+        "schema": "dtmi:RefriderationMonitorStorage:ambient;1"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:mainComponent:cold_hub_version;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "RefriderationMonitorVersion"
+        },
+        "name": "cold_hub_version",
+        "schema": "string"
+      }
+    ],
+    "displayName": {
+      "en": "MainComponent"
+    },
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ]
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:source;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Source"
+        },
+        "name": "source",
+        "schema": "string"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:location_id;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "LocationId"
+        },
+        "name": "location_id",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:geo_location;1",
+        "@type": [
+          "Telemetry",
+          "Location"
+        ],
+        "displayName": {
+          "en": "GeoLocation"
+        },
+        "name": "geo_location",
+        "schema": "geopoint"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:city;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "City"
+        },
+        "name": "city",
+        "schema": "string"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:state;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "State"
+        },
+        "name": "state",
+        "schema": "string"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:country;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "Country"
+        },
+        "name": "country",
+        "schema": "string"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:time_zone;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "TimeZone"
+        },
+        "name": "time_zone",
+        "schema": "string"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:elevation;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "Elevation"
+        },
+        "name": "elevation",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:clearsky_DHI;1",
+        "@type": "Telemetry",
+        "comment": "This is assuming clear sky condition",
+        "description": {
+          "en": "Modeled solar radiation on a horizontal surface received from the sky excluding the solar disk."
+        },
+          "displayName": {
+          "en": "ClearskyDHI"
+        },
+        "name": "clearsky_DHI",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:clearsky_DNI;1",
+        "@type": "Telemetry",
+        "comment": "This is assuming clear sky condition",
+        "description": {
+          "en": "Modeled solar radiation obtained from the direction of the sun."
+        },
+        "displayName": {
+          "en": "ClearskyDNI"
+
+        },
+        "name": "clearsky_DNI",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:clearsky_GHI;1",
+        "@type": "Telemetry",
+        "comment": "This is assuming clear sky condition",
+        "description": {
+          "en": "Modeled solar radiation on a horizontal surface received from the sky."
+        },
+        "displayName": {
+          "en": "ClearskyGHI"
+        },
+        "name": "clearsky_GHI",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:cloud_type;1",
+        "@type": "Telemetry",
+        "description": {
+          "en": "Obtained from PATMOS-X"
+        },
+        "displayName": {
+          "en": "CloudType"
+        },
+        "name": "cloud_type",
+        "schema": {
+          "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:cloud_type:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:cloud_type:schema:cloud_probability;1",
+              "description": {
+                "en": "Probability of a pixel being cloudy from the Bayesian cloud mask."
+              },
+              "displayName": {
+                "en": "CloudProbability"
+              },
+              "name": "cloud_probability",
+              "schema": "double"
+            },
+            {
+              "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:cloud_type:schema:cloud_mask;1",
+              "description": {
+                "en": "Integer classification of the cloud mask including clear=0, probably-clear=1, probably-cloudy=2, cloudy=3."
+              },
+              "displayName": {
+                "en": "CloudMask"
+              },
+              "name": "cloud_mask",
+              "schema": "double"
+            },
+            {
+              "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:cloud_type:schema:cloud_type;1",
+              "description": {
+                "en": "Integer classification of the cloud type including clear and aerosol type,0=clear,1=probably clear,2=fog,3=water,4=supercooled water,5=mixed,6=opaque_ice,7=cirrus,8=overlapping,9=overshooting,10=unknown,11=dust,12=smoke."
+              },
+              "displayName": {
+                "en": "CloudType"
+              },
+              "name": "cloud_type",
+              "schema": "double"
+            },
+            {
+              "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:cloud_type:schema:cloud_phase;1",
+              "description": {
+                "en": "Integer classification of the cloud phase including clear and aerosol type,0=clear,1=water,2=supercooled water,3=mixed,4=ice,5=unknown."
+              },
+              "displayName": {
+                "en": "CloudPhase"
+              },
+              "name": "cloud_phase",
+              "schema": "double"
+            }
+          ]
+        }
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:dew_point;1",
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "description": {
+          "en": "Calculated from specific humidity."
+        },
+        "displayName": {
+          "en": "DewPoint"
+        },
+        "name": "dew_point",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:DHI;1",
+        "@type": "Telemetry",
+        "description": {
+          "en": "Modeled solar radiation on a horizontal surface received from the sky excluding the solar disk."
+        },
+        "displayName": {
+          "en": "DHI"
+        },
+        "name": "DHI",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:DNI;1",
+        "@type": "Telemetry",
+        "description": {
+          "en": "Modeled solar radiation obtained from the direction of the sun."
+        },
+        "displayName": {
+          "en": "DNI"
+        },
+        "name": "DNI",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:GHI;1",
+        "@type": "Telemetry",
+        "description": {
+          "en": "Modeled solar radiation on a horizontal surface received from the sky."
+        },
+        "displayName": {
+          "en": "GHI"
+        },
+        "name": "GHI",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:fill_flag;1",
+        "@type": "Telemetry",
+        "description": {
+          "en": "'N/A': 0, 'Missing Image': 1, 'Low Irradiance': 2, 'Exceeds Clearsky': 3, 'Missing Cloud Properties': 4, 'Rayleigh Violation': 5"
+        },
+        "displayName": {
+          "en": "FillFlag"
+        },
+        "name": "fill_flag",
+        "schema": {
+          "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:fill_flag:schema;1",
+          "@type": "Enum",
+          "displayName": {
+            "en": "Enum"
+          },
+          "enumValues": [
+            {
+              "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:fill_flag:schema:na;1",
+              "displayName": {
+                "en": "NA"
+              },
+              "enumValue": "NA",
+              "name": "na"
+            },
+            {
+              "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:fill_flag:schema:missing_image;1",
+              "displayName": {
+                "en": "MissingImage"
+              },
+              "enumValue": "Missing Image",
+              "name": "missing_image"
+            },
+            {
+              "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:fill_flag:schema:low_irradiance;1",
+              "displayName": {
+                "en": "LowIrradiance"
+              },
+              "enumValue": "Low Irradiance",
+              "name": "low_irradiance"
+            },
+            {
+              "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:fill_flag:schema:exceeds_clearsky;1",
+              "displayName": {
+                "en": "ExceedsClearsky"
+              },
+              "enumValue": "Exceeds Clearsky",
+              "name": "exceeds_clearsky"
+            },
+            {
+              "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:fill_flag:schema:missing_cloud_properties;1",
+              "displayName": {
+                "en": "'MissingCloudProperties"
+              },
+              "enumValue": "'Missing Cloud Properties",
+              "name": "missing_cloud_properties"
+            },
+            {
+              "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:fill_flag:schema:rayleigh_violation;1",
+              "displayName": {
+                "en": "'RayleighViolation"
+              },
+              "enumValue": "'Rayleigh Violation",
+              "name": "rayleigh_violation"
+            }
+          ],
+          "valueSchema": "string"
+        }
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:snow_depth;1",
+        "@type": "Telemetry",
+        "description": {
+          "en": "Source: MERRA."
+        },
+        "displayName": {
+          "en": "SnowDepth"
+        },
+        "name": "snow_depth",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:solar_zenith_angle;1",
+        "@type": "Telemetry",
+        "description": {
+          "en": "Angle between the sun and the zenith."
+        },
+        "displayName": {
+          "en": "SolarZenithAngle"
+        },
+        "name": "solar_zenith_angle",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:temperature;1",
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "description": {
+          "en": "Source: MERRA"
+        },
+        "displayName": {
+          "en": "Temperature"
+        },
+        "name": "temperature",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:mainComponent:pressure;1",
+        "@type": [
+          "Telemetry",
+          "pressure"
+        ],
+        "description": {
+          "en": "Source: MERRA"
+        },
+        "displayName": {
+          "en": "Pressure"
+        },
+        "name": "pressure",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:mainComponent:relative_humidity;1",
+        "@type": [
+          "Telemetry",
+          "Humidity"
+        ],
+        "description": {
+          "en": "Calculated from specific humidity."
+        },
+        "displayName": {
+          "en": "RelativeHumidity"
+        },
+        "name": "relative_humidity",
+        "schema": "double",
+        "unit": "percent"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:precipitable_water;1",
+        "@type": "Telemetry",
+        "description": {
+          "en": "Source: MERRA."
+        },
+        "displayName": {
+          "en": "PrecipitableWater"
+        },
+        "name": "precipitable_water",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:wind_direction;1",
+        "@type": "Telemetry",
+        "description": {
+          "en": "Source: MERRA."
+        },
+        "displayName": {
+          "en": "WindDirection"
+        },
+        "name": "wind_direction",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:solarIrradiation:wind_speed;1",
+        "@type": "Telemetry",
+        "description": {
+          "en": "Source: MERRA."
+        },
+        "displayName": {
+          "en": "WindSpeed"
+        },
+        "name": "wind_speed",
+        "schema": "integer"
+      }
+    ],
+    "displayName": {
+      "en": "SolarIrradiation"
+    }
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:RefriderationMonitorStorage:batteryBank;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:batteryBank:total_runtime;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "TotalRuntime"
+        },
+        "name": "total_runtime",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:batteryBank:remaining_runtime;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "RemainingRuntime"
+        },
+        "name": "remaining_runtime",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:batteryBank:temperature;1",
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "displayName": {
+          "en": "Temperature"
+        },
+        "name": "temperature",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:batteryBank:SOC;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "StateOfCharge"
+        },
+        "name": "SOC",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:batteryBank:charged;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Charged"
+        },
+        "name": "charged",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:batteryBank:discharged;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Discharged"
+        },
+        "name": "discharged",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:batteryBank:voltage;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Voltage"
+        },
+        "name": "voltage",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:batteryBank:low_voltage;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "LowVoltage"
+        },
+        "name": "low_voltage",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:batteryBank:high_voltage;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "HighVoltage"
+        },
+        "name": "high_voltage",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:batteryBank:current;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Current"
+        },
+        "name": "current",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:batteryBank:performance;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Performance"
+        },
+        "name": "performance",
+        "schema": "double",
+        "unit": "percent"
+      }
+    ],
+    "displayName": {
+      "en": "batteryBank"
+    }
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:RefriderationMonitorStorage:ambient;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:ambient:temperature;1",
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "displayName": {
+          "en": "Temperature"
+        },
+        "name": "temperature",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:RefriderationMonitorStorage:ambient:humidity;1",
+        "@type": [
+          "Telemetry",
+          "Humidity"
+        ],
+        "displayName": {
+          "en": "Humidity"
+        },
+        "name": "humidity",
+        "schema": "double",
+        "unit": "percent"
+      }
+    ],
+    "displayName": {
+      "en": "Ambient"
+    }
+  }
+]
