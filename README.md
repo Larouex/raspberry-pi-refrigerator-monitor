@@ -1,4 +1,4 @@
-# RefriderationMonitor Integration for Azure IoT Central
+# Refrideration Monitor Integration for Azure IoT Central
 ![alt text](./Assets/cold-hub-outside-masthead-small.jpg "Refrideration Monitor Masthead")
 
 The Refrideration Monitor project is an end to end for connecting a Raspberry Pi with the following features to Azure IoT Central...
