@@ -111,20 +111,20 @@ class SerialEmulator():
 
       except Exception as ex:
         self.logger.error("[ERROR] %s" % ex)
-        self.logger.error("[TERMINATING] We encountered an error in Cold Hub SerialEmulator Run::run()" )
+        self.logger.error("[TERMINATING] We encountered an error in Refrideration Monitor SerialEmulator Run::run()" )
       
       finally:
         self.serial_emulator_port.close()
 
     # -------------------------------------------------------------------------------
     #   Function:   setup
-    #   Usage:      The setup function preps the configuration for the Cold Hub SerialEmulator
+    #   Usage:      The setup function preps the configuration for the Refrideration Monitor SerialEmulator
     # -------------------------------------------------------------------------------
     async def setup(self):
 
       try:
 
-        print("[%s]: Setting up the Cold Hub SerialEmulator" % self.config["NameSpace"])
+        print("[%s]: Setting up the Refrideration Monitor SerialEmulator" % self.config["NameSpace"])
         
         # Connect our Device for Telemetry and Updates
         self.serial_emulator_port = serial.Serial(
@@ -139,11 +139,11 @@ class SerialEmulator():
         # Verbose
         self.logger.info("[{0}]: USB Port {1}".format(self.config["NameSpace"], self.config["USBSerialEmulator"]["Port"]))
         self.logger.info("[{0}]: Baud Rate {1}".format(self.config["NameSpace"], self.config["USBSerialEmulator"]["BaudRate"]))
-        self.logger.info("[%s]: Completed setting up the Cold Hub SerialEmulator" % self.config["NameSpace"])
+        self.logger.info("[%s]: Completed setting up the Refrideration Monitor SerialEmulator" % self.config["NameSpace"])
 
       except Exception as ex:
         self.logger.error("[ERROR] %s" % ex)
-        self.logger.error("[TERMINATING] We encountered an error in Cold Hub SerialEmulator Setup::setup()" )
+        self.logger.error("[TERMINATING] We encountered an error in Refrideration Monitor SerialEmulator Setup::setup()" )
 
       return
 

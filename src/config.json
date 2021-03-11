@@ -1,6 +1,6 @@
 {
-  "ServerDiscoveryName": "Smart Monitor for Cold Hub",
-  "Description": "Monitoring of Cold Hub",
+  "ServerDiscoveryName": "Smart Monitor for Refrideration Monitor",
+  "Description": "Monitoring of Refrideration Monitor",
   "ApplicationUri": "urn:LarouexSmartKitchen:Server",
   "TelemetryFrequencyInSeconds": 10,
   "ReadTimeBetweenTemperatureInSeconds": 5,
@@ -48,7 +48,7 @@
             "DefaultValue": null,
             "UseRangeValues": "SelectIndex:0",
             "RangeValues": [
-              "Cold Hub Instance {deviceName}"
+              "Refrideration Monitor Instance {deviceName}"
             ]
           },
           {

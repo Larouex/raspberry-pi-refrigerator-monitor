@@ -1,10 +1,10 @@
 # RefriderationMonitor Integration for Azure IoT Central
-![alt text](./Assets/cold-hub-outside-masthead-small.jpg "Cold Hub Masthead")
+![alt text](./Assets/cold-hub-outside-masthead-small.jpg "Refrideration Monitor Masthead")
 RefriderationMonitors, is a “plug and play” modular, solar-powered walk-in cold room, for 24/7 off-grid storage and preservation of perishable foods. It adequately addresses the problem of post- harvest losses in fruits, vegetables and other perishable food. RefriderationMonitors, is installed in major food production and consumption centers (in markets and farms), farmers place their produce in clean plastic crates, these plastic crates are stacked inside the cold room. This extends the freshness of fruits, vegetables and other perishable food from 2 days to about 21 days. The solar powered walk-in cold room is made of 120mm insulating cold room panels to retain cold. Energy from solar panels mounted on the roof-top of the cold room are stored in high capacity batteries, these batteries feeds an inverter which in turn feeds the refrigerating unit.
 ## Contents
 - [RefriderationMonitor Integration for Azure IoT Central](#RefriderationMonitor-integration-for-azure-iot-central)
   - [Contents](#contents)
-  - [Bill of Materials for Cold Hub Monitoring](#bill-of-materials-for-cold-hub-monitoring)
+  - [Bill of Materials for Refrideration Monitor Monitoring](#bill-of-materials-for-cold-hub-monitoring)
       - [Components](#components)
       - [Tools](#tools)
       - [Optional](#optional)
@@ -56,11 +56,11 @@ RefriderationMonitors, is a “plug and play” modular, solar-powered walk-in c
     - [Configuring the Secrets and Retreival from Key Vault!](#configuring-the-secrets-and-retreival-from-key-vault)
   - [Azure IoT Central Device Connectivity for Local Development](#azure-iot-central-device-connectivity-for-local-development)
     - [Create our Local Configuration File Connection Secrets](#create-our-local-configuration-file-connection-secrets)
-  - [Provisioning our Our Cold Hub Device in Azure IoT Central](#provisioning-our-our-cold-hub-device-in-azure-iot-central)
-    - [The Cold Hub as a Device is Provisioned!](#the-cold-hub-as-a-device-is-provisioned)
+  - [Provisioning our Our Refrideration Monitor Device in Azure IoT Central](#provisioning-our-our-cold-hub-device-in-azure-iot-central)
+    - [The Refrideration Monitor as a Device is Provisioned!](#the-cold-hub-as-a-device-is-provisioned)
   
 
-## Bill of Materials for Cold Hub Monitoring
+## Bill of Materials for Refrideration Monitor Monitoring
 The following are needed for this project...
 #### Components
 * One(1) Raspberry Pi Board (version 4)
@@ -118,7 +118,7 @@ In this section we will walk through the steps to assemble the boards, add the h
 
 ### Soldering the Connection to the TTL Converter
 ![alt text](./Assets/solder-serial-ttl.png "Solder Serial TTL")
-The first task is to solder wire connectors for our "RS232 to TTL Converter" that connect the serial output of the Cold Hub and gather telemetry. I am showing using for colored wires to make the differentiation between...
+The first task is to solder wire connectors for our "RS232 to TTL Converter" that connect the serial output of the Refrideration Monitor and gather telemetry. I am showing using for colored wires to make the differentiation between...
 
 * GND - Ground (Black Wire)
 * TX - Transmit (Green Wire)
@@ -475,7 +475,7 @@ Complete this for the "Primary" and "Secondary" values for both "DeviceConnect->
 }
 ````
 
-## Provisioning our Our Cold Hub Device in Azure IoT Central
+## Provisioning our Our Refrideration Monitor Device in Azure IoT Central
 ***NOTE:*** Provisioning is factored into this project a "stand-alone" operation. 
 
 There are excellent tutorials on connecting devices to IoT Central and using Device Provisioning Services online and we won't try to repeat that here. If you are not familar with the concepts; please take a break and visit these topics...
@@ -513,7 +513,7 @@ HELP for provisiondevice.py
 ------------------------------------------------------------------------------------------------------------------------------------------
 ````
 
-Let's actually provision our Cold Hub Device now...
+Let's actually provision our Refrideration Monitor Device now...
 
 ````bash
 python ./provisiondevices.py -v -r 1
@@ -618,7 +618,7 @@ This is the secret data that will be written to our "secrets.json" for the devic
   ] 
 ````
 
-### The Cold Hub as a Device is Provisioned!
+### The Refrideration Monitor as a Device is Provisioned!
 ![alt text](./Assets/azure-iotc-provisioned-device-1.png "Device Provisioned")
 
 ## 

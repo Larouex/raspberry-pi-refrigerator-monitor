@@ -17,7 +17,7 @@ from classes.serialemulator import SerialEmulator
 from classes.config import Config
 
 # -------------------------------------------------------------------------------
-#   Setup the Cold Hub Serial Emulator
+#   Setup the Refrideration Monitor Serial Emulator
 # -------------------------------------------------------------------------------
 async def setup_RefriderationMonitor_serial_emulator(RefriderationMonitorSerialEmulator):
 
@@ -32,7 +32,7 @@ async def setup_RefriderationMonitor_serial_emulator(RefriderationMonitorSerialE
     return
 
 # -------------------------------------------------------------------------------
-#   Start the Cold Hub Serial Emulator Telemetry Loop
+#   Start the Refrideration Monitor Serial Emulator Telemetry Loop
 # -------------------------------------------------------------------------------
 async def run_RefriderationMonitor_serial_emulator(RefriderationMonitorSerialEmulator):
 

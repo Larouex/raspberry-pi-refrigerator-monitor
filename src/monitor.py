@@ -17,7 +17,7 @@ from classes.monitor import Monitor
 from classes.config import Config
 
 # -------------------------------------------------------------------------------
-#   Setup the Cold Hub Monitor
+#   Setup the Refrideration Monitor Monitor
 # -------------------------------------------------------------------------------
 async def setup_RefriderationMonitor_monitor(RefriderationMonitorMonitor):
 
@@ -48,7 +48,7 @@ async def load_nodes_from_devicecache(RefriderationMonitorMonitor):
     return
 
 # -------------------------------------------------------------------------------
-#   Start the Cold Hub Monitor Telemetry Loop
+#   Start the Refrideration Monitor Monitor Telemetry Loop
 # -------------------------------------------------------------------------------
 async def run_RefriderationMonitor_monitor(RefriderationMonitorMonitor):
 

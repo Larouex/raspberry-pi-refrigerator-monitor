@@ -1,7 +1,7 @@
 # ==================================================================================
 #   File:   monitor.py
 #   Author: Larry W Jordan Jr (larouex@gmail.com)
-#   Use:    This class will return and instance of the Cold Hub Monitor and with a 
+#   Use:    This class will return and instance of the Refrideration Monitor Monitor and with a 
 #           runing monitoring loop
 #
 #   https://github.com/Larouex/cold-hub-azure-iot-central
@@ -135,7 +135,7 @@ class Monitor():
         
         # Connect our Device for Telemetry and Updates
         for device in self.device_cache["Devices"]:
-          self.logger.info("[Cold Hub] CONNECTING TO IOT CENTRAL: %s" % device["Device"]["Name"])
+          self.logger.info("[Refrideration Monitor] CONNECTING TO IOT CENTRAL: %s" % device["Device"]["Name"])
           device_client = DeviceClient(self.logger, device["Device"]["Name"])
           await device_client.connect()
 
@@ -196,12 +196,12 @@ class Monitor():
           self.telemetry_dict[self.TemperatureMapName] = self.Temperature
           self.telemetry_dict[self.HumidityMapName] = self.Humidity
           #self.telemetry_dict = {**self.telemetry_dict, **self.serial_emulator.translate(serial_read)}
-          self.logger.info("[Cold Hub] SENDING PAYLOAD IOT CENTRAL")
+          self.logger.info("[Refrideration Monitor] SENDING PAYLOAD IOT CENTRAL")
           #await device_client.send_telemetry(self.telemetry_dict, self.config["Model"]["DeviceCapabilityModelId"], self.config["Model"]["NameSpace"])
           await device_client.send_telemetry(self.telemetry_dict, "dtmi:RefriderationMonitorStorage:ambient;1", "ambient")
           
           
-          self.logger.info("[Cold Hub] SUCCESS")
+          self.logger.info("[Refrideration Monitor] SUCCESS")
           self.setColor(self.GreenColor)
           await asyncio.sleep(5.0)
 
@@ -209,7 +209,7 @@ class Monitor():
 
       except Exception as ex:
         self.logger.error("[ERROR] %s" % ex)
-        self.logger.error("[TERMINATING] We encountered an error in Cold Hub Monitor Run::run()" )
+        self.logger.error("[TERMINATING] We encountered an error in Refrideration Monitor Monitor Run::run()" )
       
       except KeyboardInterrupt:
         self.p_R.stop()
@@ -224,13 +224,13 @@ class Monitor():
 
     # -------------------------------------------------------------------------------
     #   Function:   setup
-    #   Usage:      The setup function preps the configuration for the Cold Hub Monitor
+    #   Usage:      The setup function preps the configuration for the Refrideration Monitor Monitor
     # -------------------------------------------------------------------------------
     async def setup(self):
 
       try:
 
-        print("[%s]: Setting up the Cold Hub Monitor" % self.config["NameSpace"])
+        print("[%s]: Setting up the Refrideration Monitor Monitor" % self.config["NameSpace"])
 
         # --------------------------------------------------------
         # GPIO
@@ -268,9 +268,9 @@ class Monitor():
 
       except Exception as ex:
         self.logger.error("[ERROR] %s" % ex)
-        self.logger.error("[TERMINATING] We encountered an error in Cold Hub Monitor Setup::setup()" )
+        self.logger.error("[TERMINATING] We encountered an error in Refrideration Monitor Monitor Setup::setup()" )
 
-      print("[%s]: Completed setting up the Cold Hub Monitor" % self.config["NameSpace"])
+      print("[%s]: Completed setting up the Refrideration Monitor Monitor" % self.config["NameSpace"])
 
       return
 
