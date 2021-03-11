@@ -1,6 +1,13 @@
 # RefriderationMonitor Integration for Azure IoT Central
 ![alt text](./Assets/cold-hub-outside-masthead-small.jpg "Refrideration Monitor Masthead")
-RefriderationMonitors, is a “plug and play” modular, solar-powered walk-in cold room, for 24/7 off-grid storage and preservation of perishable foods. It adequately addresses the problem of post- harvest losses in fruits, vegetables and other perishable food. RefriderationMonitors, is installed in major food production and consumption centers (in markets and farms), farmers place their produce in clean plastic crates, these plastic crates are stacked inside the cold room. This extends the freshness of fruits, vegetables and other perishable food from 2 days to about 21 days. The solar powered walk-in cold room is made of 120mm insulating cold room panels to retain cold. Energy from solar panels mounted on the roof-top of the cold room are stored in high capacity batteries, these batteries feeds an inverter which in turn feeds the refrigerating unit.
+The Refrideration Monitor project is an end to end for connecting a Raspberry Pi with the following features to Azure IoT Central...
+* Capture Ambient Temperature and Humidity
+* Protocol Transalation from a Serial Interface that Emits Battery, Solar and Container Properties
+* Registration and Provisioning with Azure IoT Central
+* Telemetry Sent to the Cloud
+* DTDL Complex Device Modeling
+* Visualizations
+
 ## Contents
 - [RefriderationMonitor Integration for Azure IoT Central](#RefriderationMonitor-integration-for-azure-iot-central)
   - [Contents](#contents)
