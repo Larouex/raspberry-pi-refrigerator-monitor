@@ -1,7 +1,7 @@
-# Refrideration Monitor Integration for Azure IoT Central
-![alt text](./Assets/cold-hub-outside-masthead-small.jpg "Refrideration Monitor Masthead")
+# Refrigeration Monitor Integration for Azure IoT Central
+![alt text](./Assets/cold-hub-outside-masthead-small.jpg "Refrigeration Monitor Masthead")
 
-The Refrideration Monitor project is an end to end for connecting a Raspberry Pi with the following features to Azure IoT Central...
+The Refrigeration Monitor project is an end to end for connecting a Raspberry Pi with the following features to Azure IoT Central...
 * Capture Ambient Temperature and Humidity
 * Protocol Transalation from a Serial Interface that Emits Battery, Solar and Container Properties
 * Registration and Provisioning with Azure IoT Central
@@ -12,7 +12,7 @@ The Refrideration Monitor project is an end to end for connecting a Raspberry Pi
 ## Contents
 - [RefriderationMonitor Integration for Azure IoT Central](#RefriderationMonitor-integration-for-azure-iot-central)
   - [Contents](#contents)
-  - [Bill of Materials for Refrideration Monitor Monitoring](#bill-of-materials-for-cold-hub-monitoring)
+  - [Bill of Materials for Refrigeration Monitor Monitoring](#bill-of-materials-for-cold-hub-monitoring)
       - [Components](#components)
       - [Tools](#tools)
       - [Optional](#optional)
@@ -64,11 +64,11 @@ The Refrideration Monitor project is an end to end for connecting a Raspberry Pi
     - [Configuring the Secrets and Retreival from Key Vault!](#configuring-the-secrets-and-retreival-from-key-vault)
   - [Azure IoT Central Device Connectivity for Local Development](#azure-iot-central-device-connectivity-for-local-development)
     - [Create our Local Configuration File Connection Secrets](#create-our-local-configuration-file-connection-secrets)
-  - [Provisioning our Our Refrideration Monitor Device in Azure IoT Central](#provisioning-our-our-cold-hub-device-in-azure-iot-central)
-    - [The Refrideration Monitor as a Device is Provisioned!](#the-cold-hub-as-a-device-is-provisioned)
+  - [Provisioning our Our Refrigeration Monitor Device in Azure IoT Central](#provisioning-our-our-cold-hub-device-in-azure-iot-central)
+    - [The Refrigeration Monitor as a Device is Provisioned!](#the-cold-hub-as-a-device-is-provisioned)
   
 
-## Bill of Materials for Refrideration Monitor Monitoring
+## Bill of Materials for Refrigeration Monitor Monitoring
 The following are needed for this project...
 #### Components
 * One(1) Raspberry Pi Board (version 4)
@@ -126,7 +126,7 @@ In this section we will walk through the steps to assemble the boards, add the h
 
 ### Soldering the Connection to the TTL Converter
 ![alt text](./Assets/solder-serial-ttl.png "Solder Serial TTL")
-The first task is to solder wire connectors for our "RS232 to TTL Converter" that connect the serial output of the Refrideration Monitor and gather telemetry. I am showing using for colored wires to make the differentiation between...
+The first task is to solder wire connectors for our "RS232 to TTL Converter" that connect the serial output of the Refrigeration Monitor and gather telemetry. I am showing using for colored wires to make the differentiation between...
 
 * GND - Ground (Black Wire)
 * TX - Transmit (Green Wire)
@@ -483,7 +483,7 @@ Complete this for the "Primary" and "Secondary" values for both "DeviceConnect->
 }
 ````
 
-## Provisioning our Our Refrideration Monitor Device in Azure IoT Central
+## Provisioning our Our Refrigeration Monitor Device in Azure IoT Central
 ***NOTE:*** Provisioning is factored into this project a "stand-alone" operation. 
 
 There are excellent tutorials on connecting devices to IoT Central and using Device Provisioning Services online and we won't try to repeat that here. If you are not familar with the concepts; please take a break and visit these topics...
@@ -521,7 +521,7 @@ HELP for provisiondevice.py
 ------------------------------------------------------------------------------------------------------------------------------------------
 ````
 
-Let's actually provision our Refrideration Monitor Device now...
+Let's actually provision our Refrigeration Monitor Device now...
 
 ````bash
 python ./provisiondevices.py -v -r 1
@@ -626,7 +626,7 @@ This is the secret data that will be written to our "secrets.json" for the devic
   ] 
 ````
 
-### The Refrideration Monitor as a Device is Provisioned!
+### The Refrigeration Monitor as a Device is Provisioned!
 ![alt text](./Assets/azure-iotc-provisioned-device-1.png "Device Provisioned")
 
 ## 
